@@ -1,0 +1,44 @@
+---
+title: Installation
+description: Installation guide for running our Models Locally.
+---
+
+![Installation](https://raw.githubusercontent.com/Aayan-Mishra/Images/refs/heads/main/Installationv2.png)
+
+Setting up to run Apache Lab Models is as easy as 1 2 3!
+
+## Quick Start
+To get started, you can just follow these steps. 
+<Stepper>
+  <StepperItem title="Step 1: Creat a New Folder">
+    Begin by creating a new folder for organization:
+
+    ```bash
+    mkdir ApacheLabsModel
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 2: Access the Project Directory">
+    After cloning, navigate into the project directory to start setting up:
+
+    ```bash
+    cd ApacheLabsModels
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 3: Install Required Dependencies">
+    Install all necessary dependencies with pip:
+
+    ```bash
+    pip install --upgrade huggingface_hub
+    ```
+  </StepperItem>
+
+  <StepperItem title="Step 4: Login">
+    Finally, login to HuggingFace using your access token!:
+
+    ```bash
+    huggingface-cli login
+    ```
+  </StepperItem>
+</Stepper>

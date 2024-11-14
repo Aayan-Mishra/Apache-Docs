@@ -1,0 +1,48 @@
+---
+title: Quick Start Guide
+description: This is a quick start guide on how to run models locally on your computer!
+---
+
+![LOCAL](https://raw.githubusercontent.com/Aayan-Mishra/Images/refs/heads/main/Locally.png)
+
+### Step 1: Login to HuggingFacee
+<Note type="note" title="Note">
+  If you already have logged in to HuggingFacee and saved it as your `git` credentials, you can skip
+  this step and move on to the next step.
+</Note>
+
+    ```bash
+    pip install --upgrade huggingface_hub
+    ```
+### Step 2 (LLMs and LMs):
+#### Option A: A Use a pipeline as a high-level helper:
+   ```python
+  # Use a pipeline as a high-level helper
+   from transformers import pipeline
+
+  messages = [
+      {"role": "user", "content": "Who are you?"},
+  ]
+  pipe = pipeline("text-generation", model="apache-labs/glacier-r-plus-104B")
+  pipe(messages)
+
+    ```
+#### Option B: Load model directly
+```python
+    # Load model directly
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+
+    tokenizer = AutoTokenizer.from_pretrained("apache-labs/glacier-r-plus-104B")
+    model = AutoModelForCausalLM.from_pretrained("apache-labs/glacier-r-plus-104B")
+
+    ```
+### Step 2 (Diffusers):
+    ```python
+    from diffusers import DiffusionPipeline
+
+    pipe = DiffusionPipeline.from_pretrained("apache-labs/LUMIN.1-alpha-12B")
+
+    prompt = "A majestic mountain that has snow on the top and sun is shining on it"
+    image = pipe(prompt).images[0]
+
+```
